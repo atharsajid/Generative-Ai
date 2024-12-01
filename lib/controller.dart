@@ -117,6 +117,7 @@ class ImageController extends GetxController {
       }
     } catch (e) {
       message = e.toString();
+      Get.snackbar("Error", e.toString());
     }
   }
 
@@ -146,6 +147,7 @@ class ImageController extends GetxController {
       update();
     } catch (e) {
       console(e.toString());
+      Get.snackbar("Error", e.toString());
     }
   }
 
@@ -156,6 +158,7 @@ class ImageController extends GetxController {
       return base64Encode(byte);
     } catch (e) {
       console(e.toString());
+      Get.snackbar("Error", e.toString());
     }
     return null;
   }
@@ -186,6 +189,7 @@ class ImageController extends GetxController {
       update();
     } catch (e) {
       console(e.toString());
+      Get.snackbar("Error", e.toString());
     }
   }
 }

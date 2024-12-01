@@ -34,15 +34,10 @@ class CustomCachedNetworkImage extends StatelessWidget {
         width: imageWidth,
         height: imageHeight,
         progressIndicatorBuilder: (BuildContext context, String value, DownloadProgress progress) => Center(
-          child: Shimmer(
-            gradient: LinearGradient(
-              colors: [Colors.grey.shade200, Colors.white],
-            ),
-            child: Container(
-              height: imageHeight,
-              width: imageWidth,
-              color: Colors.white,
-            ),
+          child: CircularProgressIndicator(
+            color: Colors.purple,
+            backgroundColor: Colors.grey,
+            value: progress.progress,
           ),
         ),
         errorWidget: (
@@ -50,7 +45,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
           String url,
           dynamic error,
         ) =>
-            Text("No data found"),
+            const Text("No data found"),
       ),
     );
   }
